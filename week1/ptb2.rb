@@ -1,25 +1,25 @@
-puts "giai phuong trinh bac 2"
-puts "moi ban nhap cac he so"
-a=gets.chomp.to_i
-b=gets.chomp.to_i
-c=gets.chomp.to_i
+puts "a: "
+a = gets.chomp.to_f
+puts "b: "
+b = gets.chomp.to_f
+puts "c: "
+c = gets.chomp.to_f
 
-puts "phuong trinh ban da nha la:#{a}x^2 +#{b}x+#{c}=0"
-if a==0
-	x=-c/b
-	puts "phuong trinh co nghiem x=#{x}"
+if a == 0
+	puts "Khong phai phuon trinh bac 2"
 else
-	denta=b*b-4*a*c
-	
-	if denta<0
-		puts "pt vo nghiem"
-	elsif denta==0
-		x=-b/(2*a)
-		puts "pt co nghiem kep x=#{x}"
-		else 
-			x1=(-b+(Math.sqrt denta))/(2*a)
-			x2=(-b-(Math.sqrt denta))/(2*a)
-			puts "pt co 2 nghiem x1=#{x1},x2=#{x2}"
+	delta = b*b - 4*a*c
+	if delta == 0
+		x = -b/(2*a)
+		puts "Phuong trinh co nghiem kep: x1 = x2 = #{x}"
+	elsif delta > 0
+		x1 = (-b - Math.sqrt(delta))/(2*a)
+		x2 = (-b + Math.sqrt(delta))/(2*a)
+		puts "Phuong trinh co 2 nghiem phan biet: "
+		puts "x1 = #{x1}"
+		puts "x2 = #{x2}"
+	else
+		puts "Phuong trinh vo nghiem"
 	end
-		
 end
+		
